@@ -156,8 +156,8 @@
   gap: 20px;
 }
 
-.card-content__title {
-  margin-block-end: 10px;
+.card-content__text {
+  margin-block-start: 10px;
 }
 
 .link {
@@ -244,6 +244,7 @@
   .header-subtitle {
     justify-self: end;
     inline-size: 50%;
+    font-weight: 700;
   }
 
   .main {

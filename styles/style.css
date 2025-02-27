@@ -147,6 +147,10 @@
   font-weight: normal;
 }
 
+.section-content__title {
+  margin-block-end: 20px;
+}
+
 .content-list {
   display: grid;
   gap: 20px;
@@ -259,10 +263,6 @@
 
   .section-how .content-list {
     grid-column: 2 / 3;
-  }
-
-  .section-content__title {
-    margin-block-end: 20px;
   }
 
   .section-gallery .title-decor {

@@ -1,4 +1,33 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  /* Шрифт */
+  --font-general: 'IBM Plex mono', monospace;
+  --font-size-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-size-general: 18px;
+  --font-line-height: 23.4px;
+  --font-line-height-title: 0.825;
+  --font-bold: 700;
+
+  /* Цвет */
+  --bg-color: #000028;
+  --bg-accent-color: #ff0070;
+  --text-title-color: #db00ff;
+  --text-color: #f1b2ce;
+  --text-shadow-color: #ff0070;
+  --text-accent-color: #ff0070;
+  --text-color-heading: #00002b;
+  --border-accent-color: #ff0070;
+  --border-accent-color-rgba: rgba(255, 0, 112, 0.4);
+  --decorated-zone-element-color: #ff0070;
+
+  /* Изображение */
+  --bg-img: url('../images/cover-image-dark.png');
+
+  /* Отображение */
+  --rec-element-visibility: visible;
+}
+
+@media (width >= 768px) {
+  :root {
+    --font-size-title: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}

@@ -1,5 +1,337 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--font-general, monospace);
+  font-size: var(--font-size-general);
+  line-height: var(--font-line-height);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image: var(--bg-img);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Header */
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  min-block-size: 668px;
+  block-size: 100vh;
+}
+
+.content-area {
+  padding-inline: 10px;
+  padding-block: 10px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  border-inline-start: 1px solid var(--decorated-zone-element-color);
+  border-block-end: 1px solid var(--decorated-zone-element-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  border-inline-end: 1px solid var(--decorated-zone-element-color);
+  border-block-start: 1px solid var(--decorated-zone-element-color);
+}
+
+.rec {
+  position: absolute;
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  gap: 10px;
+  inset-block-start: 10px;
+  inset-inline-end: 20px;
+  color: var(--text-accent-color);
+  text-transform: uppercase;
+  visibility: var(--rec-element-visibility, visible);
+}
+
+.rec::after {
+  content: '';
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--text-shadow-color);
+  background-color: var(--bg-accent-color);
+}
+
+.header-title {
+  font-size: var(--font-size-title);
+  line-height: var(--font-line-height-title);
+  color: var(--text-title-color);
+  text-shadow: 4px 4px 0 var(--text-shadow-color);
+}
+
+.header__theme-menu {
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  padding-inline: 13px;
+  text-transform: lowercase;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-accent-color);
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--border-accent-color-rgba);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border: none;
+  border-block-end: 1px solid var(--border-accent-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--border-accent-color);
+  pointer-events: none;
+}
+
+.title-decor {
+  font-size: var(--font-general);
+  background-color: var(--bg-accent-color);
+  color: var(--text-color-heading);
+}
+
+.header-subtitle {
+  align-self: center;
+}
+
+/* Section content */
+.main {
+  display: grid;
+  gap: 50px;
+  margin-block: 30px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--text-accent-color);
+}
+
+.section-content .card-content__title.title-decor {
+  font-weight: normal;
+}
+
+.content-list {
+  display: grid;
+  gap: 20px;
+}
+
+.card-content__title {
+  margin-block-end: 10px;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--text-shadow-color);
+}
+
+.link:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.section-gallery {
+  gap: 10px;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.footer-title {
+  font-size: var(--font-size-title);
+  line-height: var(--font-line-height-title);
+  color: var(--text-title-color);
+  text-shadow: 4px 4px 0 var(--text-shadow-color);
+}
+
+/* Media */
+@media (width >= 768px) {
+  .header {
+    min-block-size: 1024px;
+  }
+
+  .content-area {
+    padding-inline: 20px;
+    padding-block: 20px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .rec {
+    inset-block-start: 20px;
+    inset-inline-end: 30px;
+  }
+
+  .header-title {
+    position: relative;
+    inset-inline-start: -20px;
+    font-size: var(--font-size-title);
+  }
+
+  .header-subtitle {
+    justify-self: end;
+    inline-size: 50%;
+  }
+
+  .main {
+    margin-block: 40px;
+    gap: 80px;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section-what .content-list {
+    grid-column: 1 / 3;
+  }
+
+  .section-how .content-list {
+    grid-column: 2 / 3;
+  }
+
+  .section-content__title {
+    margin-block-end: 20px;
+  }
+
+  .section-gallery .title-decor {
+    grid-column: 1 / 3;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-column: span 2;
+  }
+
+  .gallery__image {
+    object-fit: cover;
+  }
+
+  .sunset {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .ice-cream {
+    grid-row: span 2;
+  }
+
+  .tape {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .street {
+    grid-column: span 2;
+  }
+
+  .books {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+  }
+
+  .footer-title {
+    font-size: var(--font-size-title);
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .section-what .content-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
 }

@@ -1,16 +1,41 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  /* Цвет */
+  --bg-color: #fff1f7;
+  --bg-accent-color: #ff8dcb;
+  --text-title-color: #ffc2e6;
+  --text-color: #353430;
+  --text-shadow-color: #ff8dcb;
+  --text-accent-color: #353430;
+  --border-accent-color-rgba: rgba(50, 49, 45, 0.4);
+  --text-color-heading: #353430;
+  --border-accent-color: #353430;
+  --decorated-zone-element-color: #353430;
+
+  /* Изображения */
+  --bg-img: url('../images/cover-image-light.png');
+
+  /* Отображение */
+  --rec-element-visibility: hidden;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Цвет */
+    --bg-color: #fff1f7;
+    --bg-accent-color: #ff8dcb;
+    --text-title-color: #ffc2e6;
+    --text-color: #353430;
+    --text-shadow-color: #ff8dcb;
+    --text-accent-color: #353430;
+    --border-accent-color-rgba: rgba(50, 49, 45, 0.4);
+    --text-color-heading: #353430;
+    --border-accent-color: #353430;
+    --decorated-zone-element-color: #353430;
+
+    /* Изображения */
+    --bg-img: url('../images/cover-image-light.png');
+
+    /* Отображение */
+    --rec-element-visibility: hidden;
+  }
 }

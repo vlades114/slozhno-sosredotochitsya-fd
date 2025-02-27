@@ -254,7 +254,7 @@
   .section {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 20px 10px;
+    gap: 20px;
   }
 
   .section-what .content-list {
@@ -324,6 +324,10 @@
 
   .header__theme-menu-list {
     flex-direction: row;
+  }
+
+  .section {
+    gap: 20px 10px;
   }
 
   .section-what .content-list {
